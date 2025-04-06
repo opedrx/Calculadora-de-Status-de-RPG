@@ -46,12 +46,12 @@ st.subheader("=== Status Final ===")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.metric("NEX", f"{totalnex}%")
-    st.metric("VIDA", totalvd)
+    st.metric("NEX:", f"{totalnex}%")
+    st.metric("Pontos de Vida (PV):", totalvd)
 with col2:
-    st.metric("PE", totalpe)
-    st.metric("SAN", totalsan)
-st.metric("DEF", f"{defesa}" + " (+ Modificadores: armaduras e habilidades)")
+    st.metric("Pontos de Esforço (PE):", totalpe)
+    st.metric("Sanidade:", totalsan)
+st.metric("Defesa:", f"{defesa}" + " + Modificadores (armaduras e habilidades)")
 
 if st.button("Ver novos status"):
     st.rerun()
