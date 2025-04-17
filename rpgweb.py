@@ -41,7 +41,6 @@ totalvd = (dadosclasses["vdinicial"] + vigor) + (dadosclasses["vidaporbloco"] + 
 totalsan = (dadosclasses["sanidadeinicial"]) + (dadosclasses["sanidadeporbloco"]) * nexadd
 defesa = 10 + agilidade
 
-st.success("Status Base do Personagem")
 st.subheader('=== Status Final ===')
 
 col1, col2 = st.columns(2)
