@@ -16,7 +16,7 @@ classe = st.radio(
     index=0
 ).lower()
 nex = st.number_input(
-    'Você já começa com 5 de nex, quantos níveis você subiu? \nEx: Se eu tenho 20 de nex, subi 15 em relação ao começo, então digito 15:',
+    'Quanto de NEX seu personagem possui?:',
     min_value = 0,
     step=5,
     value=0
@@ -32,8 +32,9 @@ CLASSES = {
 
 dadosclasses = CLASSES[classe]
 nexinicial = 5
-totalnex = nexinicial +  nex
-nexadd = nex // 5
+totalnex = nex
+nexsubido = nex - nexinicial
+nexadd = nexsubido // 5
 
 totalpe = (dadosclasses["peinicial"] + presenca) + (dadosclasses["peporbloco"] + presenca) * nexadd
 totalvd = (dadosclasses["vdinicial"] + vigor) + (dadosclasses["vidaporbloco"] + vigor) * nexadd
@@ -41,7 +42,7 @@ totalsan = (dadosclasses["sanidadeinicial"]) + (dadosclasses["sanidadeporbloco"]
 defesa = 10 + agilidade
 
 st.success("Status Base do Personagem")
-st.subheader("=== Status Final ===")
+st.subheader('=== Status Final ===')
 
 col1, col2 = st.columns(2)
 
@@ -52,6 +53,3 @@ with col2:
     st.metric("Pontos de Esforço (PE):", totalpe)
     st.metric("Sanidade:", totalsan)
 st.metric("Defesa:", f"{defesa}" + " + Modificadores (armaduras e habilidades)")
-
-if st.button("Ver novos status"):
-    st.rerun()
